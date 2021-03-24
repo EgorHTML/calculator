@@ -1,0 +1,31 @@
+.calculator__wraper{
+    width: 250px;
+    height: 420px;
+    border: 1px solid #000;
+}
+.calculator{
+    display: flex;
+    flex-direction: column;
+}
+.output{
+    width: 240px;
+    height: 20px;
+    border: 1px solid #600;
+    margin: 7px auto;
+}   
+.panel{
+    width: 237px;
+    height: 370px;
+    border: 1px solid #600;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn{
+    width: 33%;
+    height: 61px;
+    font-size: 20px;
+}
+.panel .btn:nth-last-child(1){
+    margin: 0 auto;
+}
