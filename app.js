@@ -6,7 +6,7 @@ elemInCulc.forEach(symbol=>{
     let btn = document.createElement('button')
     btn.value = symbol
     btn.textContent = symbol
-btn.classList.add('btn')
+    btn.classList.add('btn')
     
     panel.appendChild(btn)
 })
@@ -27,7 +27,7 @@ function mathCucl(value){
     }
     
     if(value!='=' && value!='CE') out.textContent+=value
-    if((value == '/' || value == '+' || value == '-' || value == '*'||value == '.')&&(out.textContent.slice(0,1)=='/' || out.textContent.slice(0,1)=='+' || out.textContent.slice(0,1)=='-'|| out.textContent.slice(0,1)=='*'||out.textContent.slice(0,1)=='.')){
+    if((value == '/' || value == '+' || value == '*'||value == '.')&&(out.textContent.slice(0,1)=='/' || out.textContent.slice(0,1)=='+' || out.textContent.slice(0,1)=='*'||out.textContent.slice(0,1)=='.')){
         out.textContent = 'выражение неверно'
         setTimeout(()=>{
             out.textContent = ''
