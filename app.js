@@ -1,8 +1,8 @@
 const out = document.querySelector('output'),
 panel = document.querySelector('.panel')
-const elemInCulc = [7,8,9,4,5,6,1,2,3,'*',0,'=','+','-','/','C','.']
+const elemInCulc = [7,8,9,4,5,6,1,2,3,'*',0,'=','+','-','/','C','CE','.']
 
-elemInCulc.map(symbol=>{
+elemInCulc.forEach(symbol=>{
     let btn = document.createElement('button')
     btn.value = symbol
     btn.textContent = symbol
@@ -26,7 +26,7 @@ function mathCucl(value){
         out.textContent = out.textContent.replace(".",",") 
     }
     
-    if(value!='=') out.textContent+=value
+    if(value!='=' && value!='CE') out.textContent+=value
     if((value == '/' || value == '+' || value == '-' || value == '*'||value == '.')&&(out.textContent.slice(0,1)=='/' || out.textContent.slice(0,1)=='+' || out.textContent.slice(0,1)=='-'|| out.textContent.slice(0,1)=='*'||out.textContent.slice(0,1)=='.')){
         out.textContent = 'выражение неверно'
         setTimeout(()=>{
@@ -47,6 +47,12 @@ function mathCucl(value){
     }
    
     if(value === 'C') out.textContent = ''
+    if(value === 'CE'){
+       let changeOut =  out.textContent.split('')
+       let b = changeOut.pop()
+       changeOut = changeOut.join('')
+       out.textContent = changeOut
+    }
     if(out.textContent.length>29){
         let oldValue = out.textContent
         out.textContent = 'переполнено'
