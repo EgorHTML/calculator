@@ -49,18 +49,15 @@ function mathCucl(value){
     if(value === 'C') out.textContent = ''
     if(value === 'CE'){
        let changeOut =  out.textContent.split('')
-       let b = changeOut.pop()
+        changeOut.pop()
        changeOut = changeOut.join('')
        out.textContent = changeOut
     }
     if(out.textContent.length>29){
-        let oldValue = out.textContent
         out.textContent = 'переполнено'
-        // btn.removeEventListener('click',mathCuclEv)
         
         setTimeout(()=>{
-           out.textContent = oldValue  
-           oldValue = ''
+           out.textContent = ''  
         },1500)   
        }
     }

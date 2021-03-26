@@ -9,11 +9,13 @@
     flex-direction: column;
     
 }
+
 .output{
     width: 240px;
     height: 20px;
     border: 1px solid #600;
     margin: 7px auto;
+    overflow: hidden;
 }   
 .panel{
     width: 237px;
